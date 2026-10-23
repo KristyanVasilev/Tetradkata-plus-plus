@@ -1,0 +1,618 @@
+#include <windows.h>
+#include "resource.h"
+
+IDI_APP ICON "tetradkata.ico"
+1 24 "tetradkata.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+// Main menu: layout and command IDs follow Notepad++'s RT_MENU 1500
+// (docs/notepad++-menus-and-dialogs.txt). The Language menu is filled at runtime.
+
+IDR_MAINMENU MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                    IDM_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",                IDM_FILE_OPEN
+        POPUP "Open Containing &Folder"
+        BEGIN
+            MENUITEM "Explorer",                    IDM_FILE_OPEN_FOLDER
+            MENUITEM "cmd",                         IDM_FILE_OPEN_CMD
+            MENUITEM "PowerShell",                  IDM_FILE_OPEN_POWERSHELL
+        END
+        MENUITEM "Open in &Default Viewer",         IDM_FILE_OPEN_DEFAULT_VIEWER
+        MENUITEM "Re&load from Disk",               IDM_FILE_RELOAD
+        MENUITEM "&Save\tCtrl+S",                   IDM_FILE_SAVE
+        MENUITEM "Save &As...\tCtrl+Alt+S",         IDM_FILE_SAVEAS
+        MENUITEM "Save a Cop&y As...",              IDM_FILE_SAVECOPYAS
+        MENUITEM "Sa&ve All\tCtrl+Shift+S",         IDM_FILE_SAVEALL
+        MENUITEM "&Rename...",                      IDM_FILE_RENAME
+        MENUITEM "&Close\tCtrl+W",                  IDM_FILE_CLOSE
+        MENUITEM "Clos&e All\tCtrl+Shift+W",        IDM_FILE_CLOSEALL
+        POPUP "Close &Multiple Documents"
+        BEGIN
+            MENUITEM "Close All but Active Document", IDM_FILE_CLOSEALL_BUT_CURRENT
+            MENUITEM "Close All to the Left",       IDM_FILE_CLOSEALL_TOLEFT
+            MENUITEM "Close All to the Right",      IDM_FILE_CLOSEALL_TORIGHT
+            MENUITEM "Close All Unchanged",         IDM_FILE_CLOSEALL_UNCHANGED
+        END
+        MENUITEM "Move to Recycle &Bin",            IDM_FILE_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Load Sess&ion...",                IDM_FILE_LOADSESSION
+        MENUITEM "Save Sess&ion...",                IDM_FILE_SAVESESSION
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",               IDM_FILE_PRINT
+        MENUITEM "Print No&w",                      IDM_FILE_PRINTNOW
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit\tAlt+F4",                   IDM_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",                   IDM_EDIT_UNDO
+        MENUITEM "&Redo\tCtrl+Y",                   IDM_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                    IDM_EDIT_CUT
+        MENUITEM "&Copy\tCtrl+C",                   IDM_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",                  IDM_EDIT_PASTE
+        MENUITEM "&Delete\tDel",                    IDM_EDIT_DELETE
+        MENUITEM "&Select All\tCtrl+A",             IDM_EDIT_SELECTALL
+        MENUITEM "Begin/End &Select",               IDM_EDIT_BEGINEND_SELECT
+        MENUITEM SEPARATOR
+        POPUP "Insert"
+        BEGIN
+            MENUITEM "Date Time (short)",           IDM_EDIT_DATETIME_SHORT
+            MENUITEM "Date Time (long)",            IDM_EDIT_DATETIME_LONG
+        END
+        POPUP "Cop&y to Clipboard"
+        BEGIN
+            MENUITEM "Copy Current Full File path", IDM_EDIT_FULLPATH_TO_CLIP
+            MENUITEM "Copy Current Filename",       IDM_EDIT_FILENAME_TO_CLIP
+            MENUITEM "Copy Current Dir. Path",      IDM_EDIT_DIRPATH_TO_CLIP
+            MENUITEM SEPARATOR
+            MENUITEM "Copy All Filenames",          IDM_EDIT_ALL_NAMES_TO_CLIP
+            MENUITEM "Copy All File Paths",         IDM_EDIT_ALL_PATHS_TO_CLIP
+        END
+        POPUP "&Indent"
+        BEGIN
+            MENUITEM "Increase Line Indent\tTab",   IDM_EDIT_INS_TAB
+            MENUITEM "Decrease Line Indent\tShift+Tab", IDM_EDIT_RMV_TAB
+        END
+        POPUP "Con&vert Case to"
+        BEGIN
+            MENUITEM "&UPPERCASE\tCtrl+Shift+U",    IDM_EDIT_UPPERCASE
+            MENUITEM "&lowercase\tCtrl+U",          IDM_EDIT_LOWERCASE
+            MENUITEM "&Proper Case",                IDM_EDIT_PROPERCASE
+            MENUITEM "Proper Case (blend)",         IDM_EDIT_PROPERCASE_BLEND
+            MENUITEM "&Sentence case",              IDM_EDIT_SENTENCECASE
+            MENUITEM "Sentence case (blend)",       IDM_EDIT_SENTENCECASE_BLEND
+            MENUITEM "&iNVERT cASE",                IDM_EDIT_INVERTCASE
+            MENUITEM "&ranDOm CasE",                IDM_EDIT_RANDOMCASE
+        END
+        POPUP "&Line Operations"
+        BEGIN
+            MENUITEM "Duplicate Current Line\tCtrl+D", IDM_EDIT_DUP_LINE
+            MENUITEM "Remove Duplicate Lines",      IDM_EDIT_REMOVE_DUP
+            MENUITEM "Remove Consecutive Duplicate Lines", IDM_EDIT_REMOVE_CONSEC_DUP
+            MENUITEM "Join Lines\tCtrl+J",          IDM_EDIT_JOIN_LINES
+            MENUITEM "Move Up Current Line\tCtrl+Shift+Up", IDM_EDIT_LINE_UP
+            MENUITEM "Move Down Current Line\tCtrl+Shift+Down", IDM_EDIT_LINE_DOWN
+            MENUITEM "Delete Current Line\tCtrl+Shift+L", IDM_EDIT_DELETE_LINE
+            MENUITEM "Remove Empty Lines",          IDM_EDIT_REMOVE_EMPTY
+            MENUITEM "Remove Empty Lines (Containing Blank characters)", IDM_EDIT_REMOVE_EMPTY_BLANK
+            MENUITEM "Insert Blank Line Above Current\tCtrl+Alt+Enter", IDM_EDIT_BLANK_ABOVE
+            MENUITEM "Insert Blank Line Below Current\tCtrl+Alt+Shift+Enter", IDM_EDIT_BLANK_BELOW
+            MENUITEM "Reverse Line Order",          IDM_EDIT_REVERSE_LINES
+            MENUITEM "Randomize Line Order",        IDM_EDIT_RANDOMIZE_LINES
+            MENUITEM SEPARATOR
+            MENUITEM "Sort Lines Lexicographically Ascending", IDM_EDIT_SORT_LEX_ASC
+            MENUITEM "Sort Lines Lex. Ascending Ignoring Case", IDM_EDIT_SORT_LEXI_ASC
+            MENUITEM "Sort Lines As Integers Ascending", IDM_EDIT_SORT_INT_ASC
+            MENUITEM "Sort Lines As Decimals (Dot) Ascending", IDM_EDIT_SORT_DEC_ASC
+            MENUITEM "Sort Lines By Length Ascending", IDM_EDIT_SORT_LEN_ASC
+            MENUITEM SEPARATOR
+            MENUITEM "Sort Lines Lexicographically Descending", IDM_EDIT_SORT_LEX_DESC
+            MENUITEM "Sort Lines Lex. Descending Ignoring Case", IDM_EDIT_SORT_LEXI_DESC
+            MENUITEM "Sort Lines As Integers Descending", IDM_EDIT_SORT_INT_DESC
+            MENUITEM "Sort Lines As Decimals (Dot) Descending", IDM_EDIT_SORT_DEC_DESC
+            MENUITEM "Sort Lines By Length Descending", IDM_EDIT_SORT_LEN_DESC
+        END
+        POPUP "Co&mment/Uncomment"
+        BEGIN
+            MENUITEM "Toggle Single Line Comment\tCtrl+Q", IDM_EDIT_TOGGLE_COMMENT
+            MENUITEM "Single Line Comment\tCtrl+K", IDM_EDIT_STREAM_COMMENT_SINGLE
+            MENUITEM "Single Line Uncomment\tCtrl+Shift+K", IDM_EDIT_STREAM_UNCOMMENT_SINGLE
+            MENUITEM "Block Comment\tCtrl+Shift+Q", IDM_EDIT_BLOCK_COMMENT
+            MENUITEM "Block Uncomment",             IDM_EDIT_BLOCK_UNCOMMENT
+        END
+        POPUP "&Auto-Completion"
+        BEGIN
+            MENUITEM "Word Completion\tCtrl+Enter", IDM_EDIT_WORD_COMPLETE
+        END
+        POPUP "&EOL Conversion"
+        BEGIN
+            MENUITEM "Windows (CR LF)",             IDM_FORMAT_TODOS
+            MENUITEM "Unix (LF)",                   IDM_FORMAT_TOUNIX
+            MENUITEM "Macintosh (CR)",              IDM_FORMAT_TOMAC
+        END
+        POPUP "&Blank Operations"
+        BEGIN
+            MENUITEM "Trim Trailing Space",         IDM_EDIT_TRIM_TRAILING
+            MENUITEM "Trim Leading Space",          IDM_EDIT_TRIM_LEADING
+            MENUITEM "Trim Leading and Trailing Space", IDM_EDIT_TRIM_BOTH
+            MENUITEM "EOL to Space",                IDM_EDIT_EOL_TO_SPACE
+            MENUITEM "Trim both and EOL to Space",  IDM_EDIT_TRIM_ALL
+            MENUITEM SEPARATOR
+            MENUITEM "TAB to Space",                IDM_EDIT_TAB_TO_SPACE
+            MENUITEM "Space to TAB (All)",          IDM_EDIT_SPACE_TO_TAB_ALL
+            MENUITEM "Space to TAB (Leading)",      IDM_EDIT_SPACE_TO_TAB_LEADING
+        END
+        POPUP "&On Selection"
+        BEGIN
+            MENUITEM "Open File",                   IDM_EDIT_OPEN_SELECTION
+            MENUITEM "Open Containing Folder in Explorer", IDM_EDIT_OPEN_SEL_FOLDER
+            MENUITEM SEPARATOR
+            MENUITEM "&Redact Selection",           IDM_EDIT_REDACT
+            MENUITEM SEPARATOR
+            MENUITEM "Search on Internet",          IDM_EDIT_SEARCH_INTERNET
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Read-Only in Tetradkata++",       IDM_EDIT_READONLY
+        MENUITEM "Read-Only Attribute in Windows",  IDM_EDIT_SETREADONLY_ATTR
+    END
+    POPUP "&Search"
+    BEGIN
+        MENUITEM "&Find...\tCtrl+F",                IDM_SEARCH_FIND
+        MENUITEM "Find in Fi&les...\tCtrl+Shift+F", IDM_SEARCH_FINDINFILES
+        MENUITEM "Find &Next\tF3",                  IDM_SEARCH_FINDNEXT
+        MENUITEM "Find &Previous\tShift+F3",        IDM_SEARCH_FINDPREV
+        MENUITEM "&Select and Find Next\tCtrl+F3",  IDM_SEARCH_SELECT_FIND_NEXT
+        MENUITEM "&Select and Find Previous\tCtrl+Shift+F3", IDM_SEARCH_SELECT_FIND_PREV
+        MENUITEM "&Replace...\tCtrl+H",             IDM_SEARCH_REPLACE
+        MENUITEM "Search Results &Window\tF7",      IDM_SEARCH_RESULTS_WINDOW
+        MENUITEM "Next Search Resul&t\tF4",         IDM_SEARCH_NEXT_RESULT
+        MENUITEM "Previous Search Resul&t\tShift+F4", IDM_SEARCH_PREV_RESULT
+        MENUITEM "&Go to...\tCtrl+G",               IDM_SEARCH_GOTOLINE
+        MENUITEM "Go to &Matching Brace\tCtrl+B",   IDM_SEARCH_GOTO_BRACE
+        MENUITEM "Select All In-betw&een {} [] or ()\tCtrl+Alt+B", IDM_SEARCH_SELECT_BRACES
+        MENUITEM "Mar&k...\tCtrl+M",                IDM_SEARCH_MARK
+        MENUITEM "Clear all Marks",                 IDM_SEARCH_CLEAR_MARKS
+        MENUITEM SEPARATOR
+        POPUP "&Bookmark"
+        BEGIN
+            MENUITEM "Toggle Bookmark\tCtrl+F2",    IDM_SEARCH_TOGGLE_BOOKMARK
+            MENUITEM "Next Bookmark\tF2",           IDM_SEARCH_NEXT_BOOKMARK
+            MENUITEM "Previous Bookmark\tShift+F2", IDM_SEARCH_PREV_BOOKMARK
+            MENUITEM "Clear All Bookmarks",         IDM_SEARCH_CLEAR_BOOKMARKS
+            MENUITEM "Cut Bookmarked Lines",        IDM_SEARCH_CUT_MARKED
+            MENUITEM "Copy Bookmarked Lines",       IDM_SEARCH_COPY_MARKED
+            MENUITEM "Remove Bookmarked Lines",     IDM_SEARCH_DELETE_MARKED
+            MENUITEM "Remove Non-Bookmarked Lines", IDM_SEARCH_DELETE_UNMARKED
+            MENUITEM "Inverse Bookmarks",           IDM_SEARCH_INVERSE_MARKS
+        END
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Always on &Top",                  IDM_VIEW_ALWAYSONTOP
+        MENUITEM "To&ggle Full Screen Mode\tF11",   IDM_VIEW_FULLSCREEN
+        MENUITEM "&Post-It\tF12",                   IDM_VIEW_POSTIT
+        MENUITEM "&Dark Mode",                      IDM_VIEW_DARKMODE
+        MENUITEM SEPARATOR
+        POPUP "&View Current File in"
+        BEGIN
+            MENUITEM "&Firefox",                    IDM_VIEW_IN_FIREFOX
+            MENUITEM "&Chrome",                     IDM_VIEW_IN_CHROME
+            MENUITEM "&Edge",                       IDM_VIEW_IN_EDGE
+        END
+        MENUITEM SEPARATOR
+        POPUP "Show S&ymbol"
+        BEGIN
+            MENUITEM "Show Space and Tab",          IDM_VIEW_TAB_SPACE
+            MENUITEM "Show End of Line",            IDM_VIEW_EOL
+            MENUITEM "Show All Characters",         IDM_VIEW_ALL_CHARS
+            MENUITEM SEPARATOR
+            MENUITEM "Show Indent Guide",           IDM_VIEW_INDENT_GUIDE
+        END
+        POPUP "&Zoom"
+        BEGIN
+            MENUITEM "Zoom &In (Ctrl+Mouse Wheel Up)\tCtrl+Num +", IDM_VIEW_ZOOMIN
+            MENUITEM "Zoom &Out (Ctrl+Mouse Wheel Down)\tCtrl+Num -", IDM_VIEW_ZOOMOUT
+            MENUITEM "&Restore Default Zoom\tCtrl+Num /", IDM_VIEW_ZOOMRESTORE
+        END
+        POPUP "Ta&b"
+        BEGIN
+            MENUITEM "1st Tab",                     IDM_VIEW_TAB1
+            MENUITEM "2nd Tab",                     44087
+            MENUITEM "3rd Tab",                     44088
+            MENUITEM "4th Tab",                     44089
+            MENUITEM "5th Tab",                     44090
+            MENUITEM "6th Tab",                     44091
+            MENUITEM "7th Tab",                     44092
+            MENUITEM "8th Tab",                     44093
+            MENUITEM "9th Tab",                     44094
+            MENUITEM SEPARATOR
+            MENUITEM "First Tab",                   IDM_VIEW_TAB_FIRST
+            MENUITEM "Last Tab",                    IDM_VIEW_TAB_LAST
+            MENUITEM "Next Tab\tCtrl+PgDn",         IDM_VIEW_TAB_NEXT
+            MENUITEM "Previous Tab\tCtrl+PgUp",     IDM_VIEW_TAB_PREV
+            MENUITEM SEPARATOR
+            MENUITEM "Move Tab Forward\tCtrl+Shift+PgDn", IDM_VIEW_TAB_MOVEFORWARD
+            MENUITEM "Move Tab Backward\tCtrl+Shift+PgUp", IDM_VIEW_TAB_MOVEBACKWARD
+        END
+        MENUITEM "&Word wrap",                      IDM_VIEW_WRAP
+        MENUITEM SEPARATOR
+        MENUITEM "&Summary...",                     IDM_VIEW_SUMMARY
+        MENUITEM SEPARATOR
+        MENUITEM "Monito&ring (tail -f)",           IDM_VIEW_MONITORING
+    END
+    POPUP "E&ncoding"
+    BEGIN
+        MENUITEM "ANSI",                            IDM_FORMAT_ANSI
+        MENUITEM "UTF-8",                           IDM_FORMAT_UTF8
+        MENUITEM "UTF-8-BOM",                       IDM_FORMAT_UTF8BOM
+        MENUITEM "UTF-16 BE BOM",                   IDM_FORMAT_UTF16BE
+        MENUITEM "UTF-16 LE BOM",                   IDM_FORMAT_UTF16LE
+        POPUP "Character sets"
+        BEGIN
+            POPUP "Central European"
+            BEGIN
+                MENUITEM "Windows-1250",            IDM_FORMAT_WIN1250
+                MENUITEM "ISO 8859-2",              IDM_FORMAT_ISO8859_2
+            END
+            POPUP "Cyrillic"
+            BEGIN
+                MENUITEM "ISO 8859-5",              IDM_FORMAT_ISO8859_5
+                MENUITEM "KOI8-R",                  IDM_FORMAT_KOI8R
+                MENUITEM "KOI8-U",                  IDM_FORMAT_KOI8U
+                MENUITEM "OEM 855",                 IDM_FORMAT_OEM855
+                MENUITEM "OEM 866",                 IDM_FORMAT_OEM866
+                MENUITEM "Windows-1251",            IDM_FORMAT_WIN1251
+            END
+            POPUP "Greek"
+            BEGIN
+                MENUITEM "ISO 8859-7",              IDM_FORMAT_ISO8859_7
+                MENUITEM "Windows-1253",            IDM_FORMAT_WIN1253
+            END
+            POPUP "Turkish"
+            BEGIN
+                MENUITEM "Windows-1254",            IDM_FORMAT_WIN1254
+            END
+            POPUP "Western European"
+            BEGIN
+                MENUITEM "ISO 8859-1",              IDM_FORMAT_ISO8859_1
+                MENUITEM "OEM 850",                 IDM_FORMAT_OEM850
+                MENUITEM "OEM-US : CP437",          IDM_FORMAT_OEM437
+                MENUITEM "Windows-1252",            IDM_FORMAT_WIN1252
+            END
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Convert to ANSI",                 IDM_FORMAT_CONV_ANSI
+        MENUITEM "Convert to UTF-8",                IDM_FORMAT_CONV_UTF8
+        MENUITEM "Convert to UTF-8-BOM",            IDM_FORMAT_CONV_UTF8BOM
+        MENUITEM "Convert to UTF-16 BE BOM",        IDM_FORMAT_CONV_UTF16BE
+        MENUITEM "Convert to UTF-16 LE BOM",        IDM_FORMAT_CONV_UTF16LE
+    END
+    POPUP "&Language"
+    BEGIN
+        MENUITEM "None (Normal Text)",              46016
+    END
+    POPUP "Se&ttings"
+    BEGIN
+        MENUITEM "Preferences...",                  IDM_SETTING_PREFERENCES
+    END
+    POPUP "T&ools"
+    BEGIN
+        POPUP "MD5"
+        BEGIN
+            MENUITEM "Generate...",                 IDM_TOOL_MD5_GENERATE
+            MENUITEM "Generate from files...",      IDM_TOOL_MD5_FILES
+            MENUITEM "Generate from selection into clipboard", IDM_TOOL_MD5_SELECTION
+        END
+        POPUP "SHA-1"
+        BEGIN
+            MENUITEM "Generate...",                 IDM_TOOL_SHA1_GENERATE
+            MENUITEM "Generate from files...",      IDM_TOOL_SHA1_FILES
+            MENUITEM "Generate from selection into clipboard", IDM_TOOL_SHA1_SELECTION
+        END
+        POPUP "SHA-256"
+        BEGIN
+            MENUITEM "Generate...",                 IDM_TOOL_SHA256_GENERATE
+            MENUITEM "Generate from files...",      IDM_TOOL_SHA256_FILES
+            MENUITEM "Generate from selection into clipboard", IDM_TOOL_SHA256_SELECTION
+        END
+        POPUP "SHA-512"
+        BEGIN
+            MENUITEM "Generate...",                 IDM_TOOL_SHA512_GENERATE
+            MENUITEM "Generate from files...",      IDM_TOOL_SHA512_FILES
+            MENUITEM "Generate from selection into clipboard", IDM_TOOL_SHA512_SELECTION
+        END
+    END
+    POPUP "&Macro"
+    BEGIN
+        MENUITEM "Start Re&cording\tCtrl+Shift+R",  IDM_MACRO_START
+        MENUITEM "S&top Recording\tCtrl+Shift+R",   IDM_MACRO_STOP
+        MENUITEM "&Playback\tCtrl+Shift+P",         IDM_MACRO_PLAYBACK
+        MENUITEM "&Run a Macro Multiple Times...",  IDM_MACRO_RUN_MULTI
+    END
+    POPUP "&Run"
+    BEGIN
+        MENUITEM "&Run...\tF5",                     IDM_RUN
+    END
+    POPUP "&Window"
+    BEGIN
+        POPUP "Sort By"
+        BEGIN
+            MENUITEM "Name A to Z",                 IDM_WINDOW_SORT_NAME_ASC
+            MENUITEM "Name Z to A",                 IDM_WINDOW_SORT_NAME_DESC
+            MENUITEM "Path A to Z",                 IDM_WINDOW_SORT_PATH_ASC
+            MENUITEM "Path Z to A",                 IDM_WINDOW_SORT_PATH_DESC
+        END
+        MENUITEM "&Windows...",                     IDM_WINDOW_WINDOWS
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Command Line Arguments...",       IDM_CMDLINE_HELP
+        MENUITEM SEPARATOR
+        MENUITEM "Debug Info...",                   IDM_DEBUGINFO
+        MENUITEM "About Tetradkata++\tF1",          IDM_ABOUT
+    END
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Keyboard shortcuts (Notepad++ defaults; it ships no RT_ACCELERATOR, finding #2)
+
+IDR_ACCEL ACCELERATORS
+BEGIN
+    "N",        IDM_FILE_NEW,           VIRTKEY, CONTROL
+    "O",        IDM_FILE_OPEN,          VIRTKEY, CONTROL
+    "S",        IDM_FILE_SAVE,          VIRTKEY, CONTROL
+    "S",        IDM_FILE_SAVEAS,        VIRTKEY, CONTROL, ALT
+    "S",        IDM_FILE_SAVEALL,       VIRTKEY, CONTROL, SHIFT
+    "W",        IDM_FILE_CLOSE,         VIRTKEY, CONTROL
+    VK_F4,      IDM_FILE_CLOSE,         VIRTKEY, CONTROL
+    "W",        IDM_FILE_CLOSEALL,      VIRTKEY, CONTROL, SHIFT
+    "P",        IDM_FILE_PRINT,         VIRTKEY, CONTROL
+    "T",        IDM_FILE_RESTORELASTCLOSED, VIRTKEY, CONTROL, SHIFT
+    "Z",        IDM_EDIT_UNDO,          VIRTKEY, CONTROL
+    VK_BACK,    IDM_EDIT_UNDO,          VIRTKEY, ALT
+    "Y",        IDM_EDIT_REDO,          VIRTKEY, CONTROL
+    "Z",        IDM_EDIT_REDO,          VIRTKEY, CONTROL, SHIFT
+    "X",        IDM_EDIT_CUT,           VIRTKEY, CONTROL
+    "C",        IDM_EDIT_COPY,          VIRTKEY, CONTROL
+    "V",        IDM_EDIT_PASTE,         VIRTKEY, CONTROL
+    "A",        IDM_EDIT_SELECTALL,     VIRTKEY, CONTROL
+    "D",        IDM_EDIT_DUP_LINE,      VIRTKEY, CONTROL
+    "J",        IDM_EDIT_JOIN_LINES,    VIRTKEY, CONTROL
+    VK_UP,      IDM_EDIT_LINE_UP,       VIRTKEY, CONTROL, SHIFT
+    VK_DOWN,    IDM_EDIT_LINE_DOWN,     VIRTKEY, CONTROL, SHIFT
+    "L",        IDM_EDIT_DELETE_LINE,   VIRTKEY, CONTROL, SHIFT
+    VK_RETURN,  IDM_EDIT_BLANK_ABOVE,   VIRTKEY, CONTROL, ALT
+    VK_RETURN,  IDM_EDIT_BLANK_BELOW,   VIRTKEY, CONTROL, ALT, SHIFT
+    "U",        IDM_EDIT_LOWERCASE,     VIRTKEY, CONTROL
+    "U",        IDM_EDIT_UPPERCASE,     VIRTKEY, CONTROL, SHIFT
+    "Q",        IDM_EDIT_TOGGLE_COMMENT, VIRTKEY, CONTROL
+    "K",        IDM_EDIT_STREAM_COMMENT_SINGLE, VIRTKEY, CONTROL
+    "K",        IDM_EDIT_STREAM_UNCOMMENT_SINGLE, VIRTKEY, CONTROL, SHIFT
+    "Q",        IDM_EDIT_BLOCK_COMMENT, VIRTKEY, CONTROL, SHIFT
+    VK_RETURN,  IDM_EDIT_WORD_COMPLETE, VIRTKEY, CONTROL
+    VK_SPACE,   IDM_EDIT_WORD_COMPLETE, VIRTKEY, CONTROL
+    "F",        IDM_SEARCH_FIND,        VIRTKEY, CONTROL
+    "F",        IDM_SEARCH_FINDINFILES, VIRTKEY, CONTROL, SHIFT
+    VK_F3,      IDM_SEARCH_FINDNEXT,    VIRTKEY
+    VK_F3,      IDM_SEARCH_FINDPREV,    VIRTKEY, SHIFT
+    VK_F3,      IDM_SEARCH_SELECT_FIND_NEXT, VIRTKEY, CONTROL
+    VK_F3,      IDM_SEARCH_SELECT_FIND_PREV, VIRTKEY, CONTROL, SHIFT
+    "H",        IDM_SEARCH_REPLACE,     VIRTKEY, CONTROL
+    "G",        IDM_SEARCH_GOTOLINE,    VIRTKEY, CONTROL
+    "B",        IDM_SEARCH_GOTO_BRACE,  VIRTKEY, CONTROL
+    "B",        IDM_SEARCH_SELECT_BRACES, VIRTKEY, CONTROL, ALT
+    "M",        IDM_SEARCH_MARK,        VIRTKEY, CONTROL
+    VK_F7,      IDM_SEARCH_RESULTS_WINDOW, VIRTKEY
+    VK_F4,      IDM_SEARCH_NEXT_RESULT, VIRTKEY
+    VK_F4,      IDM_SEARCH_PREV_RESULT, VIRTKEY, SHIFT
+    VK_F2,      IDM_SEARCH_TOGGLE_BOOKMARK, VIRTKEY, CONTROL
+    VK_F2,      IDM_SEARCH_NEXT_BOOKMARK, VIRTKEY
+    VK_F2,      IDM_SEARCH_PREV_BOOKMARK, VIRTKEY, SHIFT
+    VK_F11,     IDM_VIEW_FULLSCREEN,    VIRTKEY
+    VK_F12,     IDM_VIEW_POSTIT,        VIRTKEY
+    VK_ADD,     IDM_VIEW_ZOOMIN,        VIRTKEY, CONTROL
+    VK_SUBTRACT, IDM_VIEW_ZOOMOUT,      VIRTKEY, CONTROL
+    VK_DIVIDE,  IDM_VIEW_ZOOMRESTORE,   VIRTKEY, CONTROL
+    VK_TAB,     IDM_VIEW_TAB_NEXT,      VIRTKEY, CONTROL
+    VK_TAB,     IDM_VIEW_TAB_PREV,      VIRTKEY, CONTROL, SHIFT
+    VK_NEXT,    IDM_VIEW_TAB_NEXT,      VIRTKEY, CONTROL
+    VK_PRIOR,   IDM_VIEW_TAB_PREV,      VIRTKEY, CONTROL
+    VK_NEXT,    IDM_VIEW_TAB_MOVEFORWARD, VIRTKEY, CONTROL, SHIFT
+    VK_PRIOR,   IDM_VIEW_TAB_MOVEBACKWARD, VIRTKEY, CONTROL, SHIFT
+    "R",        IDM_MACRO_START,        VIRTKEY, CONTROL, SHIFT
+    "P",        IDM_MACRO_PLAYBACK,     VIRTKEY, CONTROL, SHIFT
+    VK_F5,      IDM_RUN,                VIRTKEY
+    VK_F1,      IDM_ABOUT,              VIRTKEY
+END
+
+/////////////////////////////////////////////////////////////////////////////
+// Dialogs
+
+IDD_FIND DIALOGEX 0, 0, 404, 184
+STYLE DS_SHELLFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Find"
+FONT 9, "Segoe UI"
+BEGIN
+    CONTROL         "", IDC_FIND_TABS, "SysTabControl32", WS_TABSTOP | TCS_FOCUSNEVER, 4, 4, 396, 14
+    RTEXT           "Find what :", IDC_STATIC, 4, 29, 58, 8
+    COMBOBOX        IDC_FIND_WHAT, 66, 27, 210, 120, CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Replace with :", IDC_REPLACE_LABEL, 4, 47, 58, 8
+    COMBOBOX        IDC_REPLACE_WITH, 66, 45, 210, 120, CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    RTEXT           "Filters :", IDC_FILTERS_LABEL, 4, 65, 58, 8
+    EDITTEXT        IDC_FILTERS, 66, 63, 210, 12, ES_AUTOHSCROLL
+    RTEXT           "Directory :", IDC_DIR_LABEL, 4, 81, 58, 8
+    EDITTEXT        IDC_DIR, 66, 79, 188, 12, ES_AUTOHSCROLL
+    PUSHBUTTON      "...", IDC_BROWSE, 257, 78, 19, 14
+    AUTOCHECKBOX    "Follow current doc.", IDC_CUR_DIR, 66, 95, 100, 10
+    AUTOCHECKBOX    "In all su&b-folders", IDC_SUBFOLDERS, 66, 107, 100, 10
+    AUTOCHECKBOX    "In &hidden folders", IDC_HIDDEN, 66, 119, 100, 10
+    AUTOCHECKBOX    "Bookmark line", IDC_BOOKMARK_LINE, 8, 95, 100, 10
+    AUTOCHECKBOX    "Backward direction", IDC_BACKWARD, 8, 107, 100, 10
+    AUTOCHECKBOX    "Match &whole word only", IDC_MATCH_WORD, 8, 119, 100, 10
+    AUTOCHECKBOX    "Match &case", IDC_MATCH_CASE, 8, 131, 100, 10
+    AUTOCHECKBOX    "Wra&p around", IDC_WRAP, 8, 143, 100, 10
+    GROUPBOX        "Search Mode", IDC_STATIC, 170, 104, 106, 52
+    AUTORADIOBUTTON "&Normal", IDC_MODE_NORMAL, 176, 116, 96, 10, WS_GROUP | WS_TABSTOP
+    AUTORADIOBUTTON "E&xtended (\\n, \\r, \\t, \\0, \\x...)", IDC_MODE_EXTENDED, 176, 128, 96, 10
+    AUTORADIOBUTTON "Re&gular expression", IDC_MODE_REGEX, 176, 140, 96, 10
+    DEFPUSHBUTTON   "Find Next", IDC_FIND_NEXT, 284, 26, 114, 14
+    PUSHBUTTON      "Coun&t", IDC_COUNT, 284, 43, 114, 14
+    PUSHBUTTON      "Find All in Current &Document", IDC_FIND_ALL_CUR, 284, 60, 114, 14
+    PUSHBUTTON      "Find All in All &Opened Documents", IDC_FIND_ALL_OPEN, 284, 77, 114, 14
+    PUSHBUTTON      "&Replace", IDC_REPLACE, 284, 43, 114, 14
+    PUSHBUTTON      "Replace &All", IDC_REPLACE_ALL, 284, 60, 114, 14
+    PUSHBUTTON      "Replace All in All Opened Doc&uments", IDC_REPLACE_ALL_OPEN, 284, 77, 114, 14
+    PUSHBUTTON      "Find All", IDC_FIND_IN_FILES, 284, 26, 114, 14
+    PUSHBUTTON      "Mark All", IDC_MARK_ALL, 284, 26, 114, 14
+    PUSHBUTTON      "Clear all marks", IDC_CLEAR_MARKS, 284, 43, 114, 14
+    PUSHBUTTON      "Close", IDCANCEL, 284, 94, 114, 14
+    LTEXT           "", IDC_FIND_STATUS, 8, 166, 390, 10
+END
+
+IDD_GOTO DIALOGEX 0, 0, 236, 98
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Go To..."
+FONT 9, "Segoe UI"
+BEGIN
+    AUTORADIOBUTTON "&Line", IDC_GOTO_LINE, 12, 8, 50, 10, WS_GROUP | WS_TABSTOP
+    AUTORADIOBUTTON "&Offset", IDC_GOTO_OFFSET, 70, 8, 50, 10
+    LTEXT           "You are here :", IDC_STATIC, 12, 26, 96, 8
+    LTEXT           "", IDC_GOTO_HERE, 112, 26, 110, 8
+    LTEXT           "You want to go to :", IDC_STATIC, 12, 42, 96, 8
+    EDITTEXT        IDC_GOTO_VALUE, 112, 40, 70, 12, ES_NUMBER | ES_AUTOHSCROLL
+    LTEXT           "You can't go further than :", IDC_STATIC, 12, 58, 96, 8
+    LTEXT           "", IDC_GOTO_MAX, 112, 58, 110, 8
+    DEFPUSHBUTTON   "&Go", IDOK, 96, 76, 56, 14
+    PUSHBUTTON      "I'm going nowhere", IDCANCEL, 156, 76, 72, 14
+END
+
+IDD_RUN DIALOGEX 0, 0, 268, 88
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Run..."
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT           "The Program to Run", IDC_STATIC, 8, 8, 200, 8
+    COMBOBOX        IDC_RUN_CMD, 8, 20, 252, 100, CBS_DROPDOWN | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Variables: $(FULL_CURRENT_PATH)  $(CURRENT_DIRECTORY)  $(FILE_NAME)  $(NAME_PART)  $(EXT_PART)  $(CURRENT_WORD)  $(CURRENT_LINE)  $(CURRENT_COLUMN)  $(CURRENT_LINESTR)  $(NPP_DIRECTORY)", IDC_STATIC, 8, 38, 252, 26
+    DEFPUSHBUTTON   "Run!", IDOK, 146, 68, 54, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 206, 68, 54, 14
+END
+
+IDD_PREFERENCES DIALOGEX 0, 0, 300, 250
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences"
+FONT 9, "Segoe UI"
+BEGIN
+    GROUPBOX        "Editing", IDC_STATIC, 6, 4, 288, 104
+    LTEXT           "Tab size :", IDC_STATIC, 14, 19, 46, 8
+    EDITTEXT        IDC_PREF_TABSIZE, 62, 17, 28, 12, ES_NUMBER
+    AUTOCHECKBOX    "Replace by space", IDC_PREF_USESPACES, 104, 18, 100, 10
+    LTEXT           "Font :", IDC_STATIC, 14, 36, 46, 8
+    COMBOBOX        IDC_PREF_FONT, 62, 34, 150, 140, CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Size :", IDC_STATIC, 222, 36, 20, 8
+    EDITTEXT        IDC_PREF_FONTSIZE, 244, 34, 28, 12, ES_NUMBER
+    AUTOCHECKBOX    "Auto-indent", IDC_PREF_AUTOINDENT, 14, 54, 130, 10
+    AUTOCHECKBOX    "Smart highlighting", IDC_PREF_SMART, 150, 54, 130, 10
+    AUTOCHECKBOX    "Auto-insert brackets and quotes", IDC_PREF_AUTOCLOSE, 14, 68, 130, 10
+    AUTOCHECKBOX    "Word completion as you type", IDC_PREF_AUTOCOMPLETE, 150, 68, 130, 10
+    AUTOCHECKBOX    "Highlight current line", IDC_PREF_CURLINE, 14, 82, 130, 10
+    GROUPBOX        "Margins and theme", IDC_STATIC, 6, 112, 288, 34
+    AUTOCHECKBOX    "Line numbers", IDC_PREF_LINENUM, 14, 126, 80, 10
+    AUTOCHECKBOX    "Bookmark margin", IDC_PREF_BOOKMARKS, 98, 126, 80, 10
+    AUTOCHECKBOX    "Dark mode", IDC_PREF_DARK, 186, 126, 80, 10
+    GROUPBOX        "New Document", IDC_STATIC, 6, 150, 288, 32
+    LTEXT           "Encoding :", IDC_STATIC, 14, 164, 40, 8
+    COMBOBOX        IDC_PREF_ENC, 56, 162, 80, 80, CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Format :", IDC_STATIC, 150, 164, 34, 8
+    COMBOBOX        IDC_PREF_EOL, 186, 162, 96, 80, CBS_DROPDOWNLIST | WS_TABSTOP
+    GROUPBOX        "Session and backup", IDC_STATIC, 6, 186, 288, 40
+    AUTOCHECKBOX    "Remember current session for next launch", IDC_PREF_SESSION, 14, 198, 170, 10
+    AUTOCHECKBOX    "Enable session snapshot and periodic backup", IDC_PREF_BACKUP, 14, 210, 170, 10
+    AUTOCHECKBOX    "Multi-instance", IDC_PREF_MULTIINST, 196, 198, 90, 10
+    DEFPUSHBUTTON   "OK", IDOK, 180, 230, 54, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 240, 230, 54, 14
+END
+
+IDD_HASH DIALOGEX 0, 0, 320, 206
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Generate digest"
+FONT 9, "Segoe UI"
+BEGIN
+    LTEXT           "Text to hash :", IDC_HASH_LABEL, 6, 6, 200, 8
+    EDITTEXT        IDC_HASH_INPUT, 6, 16, 308, 70, ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Choose files to generate...", IDC_HASH_FILES, 6, 16, 120, 14
+    AUTOCHECKBOX    "Treat each line as a separate string", IDC_HASH_PERLINE, 6, 90, 200, 10
+    EDITTEXT        IDC_HASH_OUTPUT, 6, 104, 308, 78, ES_MULTILINE | ES_READONLY | ES_AUTOVSCROLL | ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "Copy to clipboard", IDC_HASH_COPY, 186, 186, 70, 14
+    DEFPUSHBUTTON   "Close", IDCANCEL, 260, 186, 54, 14
+END
+
+IDD_WINDOWS DIALOGEX 0, 0, 340, 182
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Windows"
+FONT 9, "Segoe UI"
+BEGIN
+    LISTBOX         IDC_WIN_LIST, 6, 6, 260, 170, LBS_EXTENDEDSEL | LBS_USETABSTOPS | LBS_NOTIFY | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "&Activate", IDC_WIN_ACTIVATE, 272, 6, 62, 14
+    PUSHBUTTON      "&Save", IDC_WIN_SAVE, 272, 24, 62, 14
+    PUSHBUTTON      "&Close window(s)", IDC_WIN_CLOSE, 272, 42, 62, 14
+    PUSHBUTTON      "&OK", IDCANCEL, 272, 162, 62, 14
+END
+
+IDD_MACRO_MULTI DIALOGEX 0, 0, 180, 70
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Run a Macro Multiple Times"
+FONT 9, "Segoe UI"
+BEGIN
+    AUTORADIOBUTTON "Run", IDC_MACRO_TIMES_RADIO, 10, 10, 30, 10, WS_GROUP | WS_TABSTOP
+    EDITTEXT        IDC_MACRO_TIMES, 42, 9, 30, 12, ES_NUMBER
+    LTEXT           "times", IDC_STATIC, 76, 11, 30, 8
+    AUTORADIOBUTTON "Run until the end of file", IDC_MACRO_EOF_RADIO, 10, 28, 120, 10
+    DEFPUSHBUTTON   "&Run", IDOK, 60, 50, 54, 14
+    PUSHBUTTON      "&Cancel", IDCANCEL, 118, 50, 54, 14
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 280, 120
+STYLE DS_SHELLFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Tetradkata++"
+FONT 9, "Segoe UI"
+BEGIN
+    ICON            IDI_APP, IDC_STATIC, 10, 10, 21, 20
+    LTEXT           "", IDC_ABOUT_TEXT, 44, 10, 228, 84
+    DEFPUSHBUTTON   "OK", IDOK, 218, 100, 54, 14
+END
+
+/////////////////////////////////////////////////////////////////////////////
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Tetradkata++"
+            VALUE "FileDescription", "Tetradkata++ text editor"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "Tetradkata++"
+            VALUE "OriginalFilename", "Tetradkata++.exe"
+            VALUE "ProductName", "Tetradkata++"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END

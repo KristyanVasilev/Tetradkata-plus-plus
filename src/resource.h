@@ -1,0 +1,333 @@
+// Command IDs mirror the numbers decoded from Notepad++'s RT_MENU 1500
+// (see docs/REVERSE_ENGINEERING.md, finding #3/#4). IDs marked "T++" are our own.
+#pragma once
+
+#define IDI_APP                 100
+#define IDR_MAINMENU            1500
+#define IDR_ACCEL               1501
+#define IDR_TABMENU             1502
+
+// File
+#define IDM_FILE_NEW            41001
+#define IDM_FILE_OPEN           41002
+#define IDM_FILE_CLOSE          41003
+#define IDM_FILE_CLOSEALL       41004
+#define IDM_FILE_CLOSEALL_BUT_CURRENT 41005
+#define IDM_FILE_SAVE           41006
+#define IDM_FILE_SAVEALL        41007
+#define IDM_FILE_SAVEAS         41008
+#define IDM_FILE_CLOSEALL_TOLEFT 41009
+#define IDM_FILE_PRINT          41010
+#define IDM_FILE_EXIT           41011
+#define IDM_FILE_LOADSESSION    41012
+#define IDM_FILE_SAVESESSION    41013
+#define IDM_FILE_RELOAD         41014
+#define IDM_FILE_SAVECOPYAS     41015
+#define IDM_FILE_DELETE         41016
+#define IDM_FILE_RENAME         41017
+#define IDM_FILE_CLOSEALL_TORIGHT 41018
+#define IDM_FILE_OPEN_FOLDER    41019
+#define IDM_FILE_OPEN_CMD       41020
+#define IDM_FILE_RESTORELASTCLOSED 41021
+#define IDM_FILE_OPEN_DEFAULT_VIEWER 41023
+#define IDM_FILE_CLOSEALL_UNCHANGED 41024
+#define IDM_FILE_OPEN_POWERSHELL 41027
+#define IDM_FILE_PRINTNOW       1001
+#define IDM_RECENT_BASE         40100   // T++: 40100..40129
+#define IDM_RECENT_OPENALL      40140   // T++
+#define IDM_RECENT_CLEAR        40141   // T++
+
+// Edit
+#define IDM_EDIT_CUT            42001
+#define IDM_EDIT_COPY           42002
+#define IDM_EDIT_UNDO           42003
+#define IDM_EDIT_REDO           42004
+#define IDM_EDIT_PASTE          42005
+#define IDM_EDIT_DELETE         42006
+#define IDM_EDIT_SELECTALL      42007
+#define IDM_EDIT_INS_TAB        42008
+#define IDM_EDIT_RMV_TAB        42009
+#define IDM_EDIT_DUP_LINE       42010
+#define IDM_EDIT_JOIN_LINES     42013
+#define IDM_EDIT_LINE_UP        42014
+#define IDM_EDIT_LINE_DOWN      42015
+#define IDM_EDIT_UPPERCASE      42016
+#define IDM_EDIT_LOWERCASE      42017
+#define IDM_MACRO_START         42018
+#define IDM_MACRO_STOP          42019
+#define IDM_EDIT_BEGINEND_SELECT 42020
+#define IDM_MACRO_PLAYBACK      42021
+#define IDM_EDIT_TOGGLE_COMMENT 42022
+#define IDM_EDIT_BLOCK_COMMENT  42023
+#define IDM_EDIT_TRIM_TRAILING  42024
+#define IDM_EDIT_READONLY       42028
+#define IDM_EDIT_FULLPATH_TO_CLIP 42029
+#define IDM_EDIT_FILENAME_TO_CLIP 42030
+#define IDM_EDIT_DIRPATH_TO_CLIP 42031
+#define IDM_MACRO_RUN_MULTI     42032
+#define IDM_EDIT_SETREADONLY_ATTR 42033
+#define IDM_EDIT_STREAM_COMMENT_SINGLE 42035
+#define IDM_EDIT_STREAM_UNCOMMENT_SINGLE 42036
+#define IDM_EDIT_TRIM_LEADING   42042
+#define IDM_EDIT_TRIM_BOTH      42043
+#define IDM_EDIT_EOL_TO_SPACE   42044
+#define IDM_EDIT_TRIM_ALL       42045
+#define IDM_EDIT_TAB_TO_SPACE   42046
+#define IDM_EDIT_BLOCK_UNCOMMENT 42047
+#define IDM_EDIT_SPACE_TO_TAB_LEADING 42053
+#define IDM_EDIT_SPACE_TO_TAB_ALL 42054
+#define IDM_EDIT_REMOVE_EMPTY   42055
+#define IDM_EDIT_REMOVE_EMPTY_BLANK 42056
+#define IDM_EDIT_BLANK_ABOVE    42057
+#define IDM_EDIT_BLANK_BELOW    42058
+#define IDM_EDIT_SORT_LEX_ASC   42059
+#define IDM_EDIT_SORT_LEX_DESC  42060
+#define IDM_EDIT_SORT_INT_ASC   42061
+#define IDM_EDIT_SORT_INT_DESC  42062
+#define IDM_EDIT_SORT_DEC_ASC   42065
+#define IDM_EDIT_SORT_DEC_DESC  42066
+#define IDM_EDIT_PROPERCASE     42067
+#define IDM_EDIT_PROPERCASE_BLEND 42068
+#define IDM_EDIT_SENTENCECASE   42069
+#define IDM_EDIT_SENTENCECASE_BLEND 42070
+#define IDM_EDIT_INVERTCASE     42071
+#define IDM_EDIT_RANDOMCASE     42072
+#define IDM_EDIT_OPEN_SELECTION 42073
+#define IDM_EDIT_OPEN_SEL_FOLDER 42074
+#define IDM_EDIT_SEARCH_INTERNET 42075
+#define IDM_EDIT_REMOVE_CONSEC_DUP 42077
+#define IDM_EDIT_RANDOMIZE_LINES 42078
+#define IDM_EDIT_REMOVE_DUP     42079
+#define IDM_EDIT_SORT_LEXI_ASC  42080
+#define IDM_EDIT_SORT_LEXI_DESC 42081
+#define IDM_EDIT_REVERSE_LINES  42083
+#define IDM_EDIT_DATETIME_SHORT 42084
+#define IDM_EDIT_DATETIME_LONG  42085
+#define IDM_EDIT_ALL_NAMES_TO_CLIP 42087
+#define IDM_EDIT_ALL_PATHS_TO_CLIP 42088
+#define IDM_EDIT_SORT_LEN_ASC   42104
+#define IDM_EDIT_SORT_LEN_DESC  42105
+#define IDM_EDIT_REDACT         42106
+#define IDM_EDIT_DELETE_LINE    42200   // T++ (Scintilla Ctrl+Shift+L)
+#define IDM_EDIT_WORD_COMPLETE  50001
+
+// Search
+#define IDM_SEARCH_FIND         43001
+#define IDM_SEARCH_FINDNEXT     43002
+#define IDM_SEARCH_REPLACE      43003
+#define IDM_SEARCH_GOTOLINE     43004
+#define IDM_SEARCH_TOGGLE_BOOKMARK 43005
+#define IDM_SEARCH_NEXT_BOOKMARK 43006
+#define IDM_SEARCH_PREV_BOOKMARK 43007
+#define IDM_SEARCH_CLEAR_BOOKMARKS 43008
+#define IDM_SEARCH_GOTO_BRACE   43009
+#define IDM_SEARCH_FINDPREV     43010
+#define IDM_SEARCH_FINDINFILES  43013
+#define IDM_SEARCH_CUT_MARKED   43018
+#define IDM_SEARCH_COPY_MARKED  43019
+#define IDM_SEARCH_DELETE_MARKED 43021
+#define IDM_SEARCH_CLEAR_MARKS  43032
+#define IDM_SEARCH_RESULTS_WINDOW 43045
+#define IDM_SEARCH_NEXT_RESULT  43046
+#define IDM_SEARCH_PREV_RESULT  43047
+#define IDM_SEARCH_SELECT_FIND_NEXT 43048
+#define IDM_SEARCH_SELECT_FIND_PREV 43049
+#define IDM_SEARCH_INVERSE_MARKS 43050
+#define IDM_SEARCH_DELETE_UNMARKED 43051
+#define IDM_SEARCH_SELECT_BRACES 43053
+#define IDM_SEARCH_MARK         43054
+
+// View
+#define IDM_VIEW_POSTIT         44009
+#define IDM_VIEW_ALL_CHARS      44019
+#define IDM_VIEW_INDENT_GUIDE   44020
+#define IDM_VIEW_WRAP           44022
+#define IDM_VIEW_ZOOMIN         44023
+#define IDM_VIEW_ZOOMOUT        44024
+#define IDM_VIEW_TAB_SPACE      44025
+#define IDM_VIEW_EOL            44026
+#define IDM_VIEW_FULLSCREEN     44032
+#define IDM_VIEW_ZOOMRESTORE    44033
+#define IDM_VIEW_ALWAYSONTOP    44034
+#define IDM_VIEW_SUMMARY        44049
+#define IDM_VIEW_TAB1           44086   // ..44094
+#define IDM_VIEW_TAB_NEXT       44095
+#define IDM_VIEW_TAB_PREV       44096
+#define IDM_VIEW_MONITORING     44097
+#define IDM_VIEW_TAB_MOVEFORWARD 44098
+#define IDM_VIEW_TAB_MOVEBACKWARD 44099
+#define IDM_VIEW_IN_FIREFOX     44100
+#define IDM_VIEW_IN_CHROME      44101
+#define IDM_VIEW_IN_EDGE        44102
+#define IDM_VIEW_TAB_FIRST      44116
+#define IDM_VIEW_TAB_LAST       44117
+#define IDM_VIEW_DARKMODE       44200   // T++
+
+// Format / Encoding
+#define IDM_FORMAT_TODOS        45001
+#define IDM_FORMAT_TOUNIX       45002
+#define IDM_FORMAT_TOMAC        45003
+#define IDM_FORMAT_ANSI         45004
+#define IDM_FORMAT_UTF8BOM      45005
+#define IDM_FORMAT_UTF16BE      45006
+#define IDM_FORMAT_UTF16LE      45007
+#define IDM_FORMAT_UTF8         45008
+#define IDM_FORMAT_CONV_ANSI    45009
+#define IDM_FORMAT_CONV_UTF8    45010
+#define IDM_FORMAT_CONV_UTF8BOM 45011
+#define IDM_FORMAT_CONV_UTF16BE 45012
+#define IDM_FORMAT_CONV_UTF16LE 45013
+#define IDM_FORMAT_WIN1250      45020
+#define IDM_FORMAT_WIN1251      45021
+#define IDM_FORMAT_WIN1252      45022
+#define IDM_FORMAT_WIN1253      45023
+#define IDM_FORMAT_WIN1254      45024
+#define IDM_FORMAT_ISO8859_1    45029
+#define IDM_FORMAT_ISO8859_2    45030
+#define IDM_FORMAT_ISO8859_5    45033
+#define IDM_FORMAT_ISO8859_7    45035
+#define IDM_FORMAT_OEM437       45044
+#define IDM_FORMAT_OEM850       45048
+#define IDM_FORMAT_OEM855       45050
+#define IDM_FORMAT_OEM866       45058
+#define IDM_FORMAT_KOI8U        45067
+#define IDM_FORMAT_KOI8R        45068
+
+// Language (entries are built from the language table at runtime)
+#define IDM_LANG_FIRST          46000
+#define IDM_LANG_LAST           46499
+
+// Help
+#define IDM_ABOUT               47000
+#define IDM_CMDLINE_HELP        47010
+#define IDM_DEBUGINFO           47012
+
+// Settings / Tools
+#define IDM_SETTING_PREFERENCES 48011
+#define IDM_TOOL_MD5_GENERATE   48501
+#define IDM_TOOL_MD5_FILES      48502
+#define IDM_TOOL_MD5_SELECTION  48503
+#define IDM_TOOL_SHA256_GENERATE 48504
+#define IDM_TOOL_SHA256_FILES   48505
+#define IDM_TOOL_SHA256_SELECTION 48506
+#define IDM_TOOL_SHA1_GENERATE  48507
+#define IDM_TOOL_SHA1_FILES     48508
+#define IDM_TOOL_SHA1_SELECTION 48509
+#define IDM_TOOL_SHA512_GENERATE 48510
+#define IDM_TOOL_SHA512_FILES   48511
+#define IDM_TOOL_SHA512_SELECTION 48512
+
+// Run / Window
+#define IDM_RUN                 49000
+#define IDM_WINDOW_WINDOWS      11001
+#define IDM_WINDOW_SORT_NAME_ASC 11002
+#define IDM_WINDOW_SORT_NAME_DESC 11003
+#define IDM_WINDOW_SORT_PATH_ASC 11004
+#define IDM_WINDOW_SORT_PATH_DESC 11005
+
+// Dialogs (numbers follow the Notepad++ dialog IDs where one exists)
+#define IDD_FIND                1600
+#define IDD_RUN                 1900
+#define IDD_HASH                1930
+#define IDD_GOTO                2000
+#define IDD_PREFERENCES         6000
+#define IDD_WINDOWS             7000
+#define IDD_MACRO_MULTI         8000
+#define IDD_ABOUT               8100
+
+// Find dialog controls
+#define IDC_FIND_WHAT           1601
+#define IDC_REPLACE_WITH        1602
+#define IDC_REPLACE_LABEL       1603
+#define IDC_MATCH_WORD          1604
+#define IDC_MATCH_CASE          1605
+#define IDC_WRAP                1606
+#define IDC_BACKWARD            1607
+#define IDC_MODE_NORMAL         1608
+#define IDC_MODE_EXTENDED       1609
+#define IDC_MODE_REGEX          1610
+#define IDC_DOT_NEWLINE         1611
+#define IDC_FIND_NEXT           1612
+#define IDC_COUNT               1613
+#define IDC_FIND_ALL_CUR        1614
+#define IDC_FIND_ALL_OPEN       1615
+#define IDC_REPLACE             1616
+#define IDC_REPLACE_ALL         1617
+#define IDC_REPLACE_ALL_OPEN    1618
+#define IDC_MARK_ALL            1619
+#define IDC_CLEAR_MARKS         1620
+#define IDC_BOOKMARK_LINE       1621
+#define IDC_FIND_STATUS         1622
+#define IDC_FIND_TABS           1623
+#define IDC_DIR                 1624
+#define IDC_DIR_LABEL           1625
+#define IDC_FILTERS             1626
+#define IDC_FILTERS_LABEL       1627
+#define IDC_BROWSE              1628
+#define IDC_SUBFOLDERS          1629
+#define IDC_HIDDEN              1630
+#define IDC_FIND_IN_FILES       1631
+#define IDC_CUR_DIR             1632
+#define IDC_IN_SELECTION        1633
+
+// Go to
+#define IDC_GOTO_LINE           2001
+#define IDC_GOTO_OFFSET         2002
+#define IDC_GOTO_VALUE          2003
+#define IDC_GOTO_HERE           2004
+#define IDC_GOTO_MAX            2005
+
+// Run
+#define IDC_RUN_CMD             1901
+
+// Hash
+#define IDC_HASH_INPUT          1931
+#define IDC_HASH_OUTPUT         1932
+#define IDC_HASH_PERLINE        1933
+#define IDC_HASH_COPY           1934
+#define IDC_HASH_FILES          1935
+#define IDC_HASH_LABEL          1936
+
+// Preferences
+#define IDC_PREF_TABSIZE        6001
+#define IDC_PREF_USESPACES      6002
+#define IDC_PREF_FONT           6003
+#define IDC_PREF_FONTSIZE       6004
+#define IDC_PREF_DARK           6005
+#define IDC_PREF_SESSION        6006
+#define IDC_PREF_BACKUP         6007
+#define IDC_PREF_SMART          6008
+#define IDC_PREF_AUTOINDENT     6009
+#define IDC_PREF_LINENUM        6010
+#define IDC_PREF_BOOKMARKS      6011
+#define IDC_PREF_CURLINE        6012
+#define IDC_PREF_ENC            6013
+#define IDC_PREF_EOL            6014
+#define IDC_PREF_MULTIINST      6015
+#define IDC_PREF_AUTOCLOSE      6016
+#define IDC_PREF_AUTOCOMPLETE   6017
+
+#ifndef IDC_STATIC
+#define IDC_STATIC              (-1)
+#endif
+
+// Windows dialog
+#define IDC_WIN_LIST            7001
+#define IDC_WIN_ACTIVATE        7002
+#define IDC_WIN_SAVE            7003
+#define IDC_WIN_CLOSE           7004
+
+// Macro multi
+#define IDC_MACRO_TIMES_RADIO   8001
+#define IDC_MACRO_TIMES         8002
+#define IDC_MACRO_EOF_RADIO     8003
+
+// About
+#define IDC_ABOUT_TEXT          8101
+
+// Child window IDs
+#define IDC_EDITOR              5001
+#define IDC_TABS                5002
+#define IDC_STATUS              5003
+#define IDC_TOOLBAR             5004
+#define IDC_RESULTS             5005

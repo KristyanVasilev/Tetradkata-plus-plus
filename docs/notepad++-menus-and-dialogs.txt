@@ -1,0 +1,808 @@
+=== MENU {'kind': 'id', 'id': 1500} lang {'kind': 'id', 'id': 1033}
+[&File]
+  41001: &New
+  41002: &Open...
+  [Open Containing &Folder]
+    41019: Explorer
+    41020: cmd
+    41027: PowerShell
+    ----
+    41025: Folder as Workspace
+  41023: Open in &Default Viewer
+  41022: Open Folder as &Workspace...
+  41014: Re&load from Disk
+  41006: &Save
+  41008: Save &As...
+  41015: Save a Cop&y As...
+  41007: Sa&ve All
+  41017: &Rename...
+  41003: &Close
+  41004: Clos&e All
+  [Close &Multiple Documents]
+    41005: Close All but Active Document
+    41026: Close All but Pinned Documents
+    41009: Close All to the Left
+    41018: Close All to the Right
+    41024: Close All Unchanged
+  41016: Move to Recycle &Bin
+  ----
+  41012: Load Sess&ion...
+  41013: Save Sess&ion...
+  ----
+  41010: &Print...
+  1001: Print No&w
+  ----
+  41011: E&xit
+[&Edit]
+  42003: &Undo
+  42004: &Redo
+  ----
+  42001: Cu&t
+  42002: &Copy
+  42005: &Paste
+  42006: &Delete
+  42007: &Select All
+  42020: Begin/End &Select
+  42089: Begin/End Select in Column Mode
+  ----
+  [Insert]
+    42084: Date Time (short)
+    42085: Date Time (long)
+    42086: Date Time (customized)
+  [Cop&y to Clipboard]
+    42029: Copy Current Full File path
+    42030: Copy Current Filename
+    42031: Copy Current Dir. Path
+    ----
+    42087: Copy All Filenames
+    42088: Copy All File Paths
+  [&Indent]
+    42008: Increase Line Indent
+    42009: Decrease Line Indent
+  [Con&vert Case to]
+    42016: &UPPERCASE
+    42017: &lowercase
+    42067: &Proper Case
+    42068: Proper Case (blend)
+    42069: &Sentence case
+    42070: Sentence case (blend)
+    42071: &iNVERT cASE
+    42072: &ranDOm CasE
+  [&Line Operations]
+    42010: Duplicate Current Line
+    42079: Remove Duplicate Lines
+    42077: Remove Consecutive Duplicate Lines
+    42012: Split Lines
+    42013: Join Lines
+    42014: Move Up Current Line
+    42015: Move Down Current Line
+    42055: Remove Empty Lines
+    42056: Remove Empty Lines (Containing Blank characters)
+    42057: Insert Blank Line Above Current
+    42058: Insert Blank Line Below Current
+    42083: Reverse Line Order
+    42078: Randomize Line Order
+    ----
+    42059: Sort Lines Lexicographically Ascending
+    42080: Sort Lines Lex. Ascending Ignoring Case
+    42100: Sort Lines In Locale Order Ascending
+    42061: Sort Lines As Integers Ascending
+    42063: Sort Lines As Decimals (Comma) Ascending
+    42065: Sort Lines As Decimals (Dot) Ascending
+    42104: Sort Lines By Length Ascending
+    ----
+    42060: Sort Lines Lexicographically Descending
+    42081: Sort Lines Lex. Descending Ignoring Case
+    42101: Sort Lines In Locale Order Descending
+    42062: Sort Lines As Integers Descending
+    42064: Sort Lines As Decimals (Comma) Descending
+    42066: Sort Lines As Decimals (Dot) Descending
+    42105: Sort Lines By Length Descending
+  [Co&mment/Uncomment]
+    42022: Toggle Single Line Comment
+    42035: Single Line Comment
+    42036: Single Line Uncomment
+    42023: Block Comment
+    42047: Block Uncomment
+  [&Auto-Completion]
+    50000: Function Completion
+    50001: Word Completion
+    50002: Function Parameters Hint
+    50010: Function Parameters Previous Hint
+    50011: Function Parameters Next Hint
+    50006: Path Completion
+  [&EOL Conversion]
+    45001: Windows (CR LF)
+    45002: Unix (LF)
+    45003: Macintosh (CR)
+  [&Blank Operations]
+    42024: Trim Trailing Space
+    42042: Trim Leading Space
+    42043: Trim Leading and Trailing Space
+    42044: EOL to Space
+    42045: Trim both and EOL to Space
+    ----
+    42046: TAB to Space
+    42054: Space to TAB (All)
+    42053: Space to TAB (Leading)
+  [&Paste Special]
+    42038: Paste HTML Content
+    42039: Paste RTF Content
+    ----
+    42048: Copy Binary Content
+    42049: Cut Binary Content
+    42050: Paste Binary Content
+  [&On Selection]
+    42073: Open File
+    42074: Open Containing Folder in Explorer
+    ----
+    42106: &Redact Selection █ (Shift: ●)
+    ----
+    42075: Search on Internet
+    42076: Change Search Engine...
+  ----
+  [Multi-select All]
+    42090: Ignore Case && Whole Word
+    42091: Match Case Only
+    42092: Match Whole Word Only
+    42093: Match Case && Whole Word
+  [Multi-select Next]
+    42094: Ignore Case && Whole Word
+    42095: Match Case Only
+    42096: Match Whole Word Only
+    42097: Match Case && Whole Word
+  42098: Undo the Latest Added Multi-Select
+  42099: Skip Current && Go to Next Multi-select
+  ----
+  42037: Column Mode...
+  42034: Colum&n Editor...
+  42051: Character &Panel
+  42052: Clipboard &History
+  ----
+  [Read-&Only in Notepad++]
+    42028: Read-Only on Current Document
+    42102: Read-Only for All Documents
+    42103: Clear Read-Only for All Documents
+  42033: Read-Only Attribute in Windows
+[&Search]
+  43001: &Find...
+  43013: Find in Fi&les...
+  43002: Find &Next
+  43010: Find &Previous
+  43048: &Select and Find Next
+  43049: &Select and Find Previous
+  43014: Find (&Volatile) Next
+  43015: Find (&Volatile) Previous
+  43003: &Replace...
+  43011: &Incremental Search
+  43045: Search Results &Window
+  43046: Next Search Resul&t
+  43047: Previous Search Resul&t
+  43004: &Go to...
+  43009: Go to &Matching Brace
+  43053: Select All In-betw&een {} [] or ()
+  43054: Mar&k...
+  ----
+  [Change History]
+    43067: Go to Next Change
+    43068: Go to Previous Change
+    43069: Clear Change History
+  ----
+  [Style &All Occurrences of Token]
+    43022: Using 1st Style
+    43024: Using 2nd Style
+    43026: Using 3rd Style
+    43028: Using 4th Style
+    43030: Using 5th Style
+  [Style &One Token]
+    43062: Using 1st Style
+    43063: Using 2nd Style
+    43064: Using 3rd Style
+    43065: Using 4th Style
+    43066: Using 5th Style
+  [Clear Style]
+    43023: Clear 1st Style
+    43025: Clear 2nd Style
+    43027: Clear 3rd Style
+    43029: Clear 4th Style
+    43031: Clear 5th Style
+    43032: Clear all Styles
+  [&Jump Up]
+    43033: 1st Style
+    43034: 2nd Style
+    43035: 3rd Style
+    43036: 4th Style
+    43037: 5th Style
+    43038: Find Mark Style
+  [Jump &Down]
+    43039: 1st Style
+    43040: 2nd Style
+    43041: 3rd Style
+    43042: 4th Style
+    43043: 5th Style
+    43044: Find Mark Style
+  [&Copy Styled Text]
+    43055: 1st Style
+    43056: 2nd Style
+    43057: 3rd Style
+    43058: 4th Style
+    43059: 5th Style
+    43060: All Styles
+    43061: Find Mark Style
+  ----
+  [&Bookmark]
+    43005: Toggle Bookmark
+    43006: Next Bookmark
+    43007: Previous Bookmark
+    43008: Clear All Bookmarks
+    43018: Cut Bookmarked Lines
+    43019: Copy Bookmarked Lines
+    43020: Paste to (Replace) Bookmarked Lines
+    43021: Remove Bookmarked Lines
+    43051: Remove Non-Bookmarked Lines
+    43050: Inverse Bookmarks
+  ----
+  43052: Find characters in rang&e...
+[&View]
+  44034: Always on &Top
+  44032: To&ggle Full Screen Mode
+  44009: &Post-It
+  44011: D&istraction Free Mode
+  ----
+  [&View Current File in]
+    44100: &Firefox
+    44101: &Chrome
+    44102: &Edge
+    44103: &IE
+  ----
+  [Show S&ymbol]
+    44025: Show Space and Tab
+    44026: Show End of Line
+    44130: Show Non-Printing Characters
+    44131: Show Control Characters && Unicode EOL
+    44019: Show All Characters
+    ----
+    44020: Show Indent Guide
+    44041: Show Wrap Symbol
+  [&Zoom]
+    44023: Zoom &In (Ctrl+Mouse Wheel Up)
+    44024: Zoom &Out (Ctrl+Mouse Wheel Down)
+    44033: &Restore Default Zoom
+    ----
+    44027: &Synchronize Across Views
+  [&Move/Clone Current Document]
+    10001: &Move to Other View
+    10002: &Clone to Other View
+    10003: Mo&ve to New Instance
+    10004: &Open in New Instance
+  [Ta&b]
+    44086: 1st Tab
+    44087: 2nd Tab
+    44088: 3rd Tab
+    44089: 4th Tab
+    44090: 5th Tab
+    44091: 6th Tab
+    44092: 7th Tab
+    44093: 8th Tab
+    44094: 9th Tab
+    ----
+    44116: First Tab
+    44117: Last Tab
+    44095: Next Tab
+    44096: Previous Tab
+    ----
+    10005: Move to Start
+    10006: Move to End
+    44098: Move Tab Forward
+    44099: Move Tab Backward
+    ----
+    44111: Apply Color 1
+    44112: Apply Color 2
+    44113: Apply Color 3
+    44114: Apply Color 4
+    44115: Apply Color 5
+    44110: Remove Color
+  44022: &Word wrap
+  44072: Focus on &Another View
+  44042: &Hide Lines
+  ----
+  44010: Fold All
+  44029: Unfold All
+  44030: Fold Current Level
+  44031: Unfold Current Level
+  [Fold Level]
+    44051: 1
+    44052: 2
+    44053: 3
+    44054: 4
+    44055: 5
+    44056: 6
+    44057: 7
+    44058: 8
+  [Unfold Level]
+    44061: 1
+    44062: 2
+    44063: 3
+    44064: 4
+    44065: 5
+    44066: 6
+    44067: 7
+    44068: 8
+  ----
+  44049: &Summary...
+  ----
+  [Pro&ject Panels]
+    44081: Project Panel &1
+    44082: Project Panel &2
+    44083: Project Panel &3
+  44085: Folder as Wor&kspace
+  44080: &Document Map
+  44070: D&ocument List
+  44084: Function &List
+  ----
+  44035: Sy&nchronize Vertical Scrolling
+  44036: Syn&chronize Horizontal Scrolling
+  ----
+  42026: T&ext Direction RTL
+  42027: Te&xt Direction LTR
+  ----
+  44097: Monito&ring (tail -f)
+[E&ncoding]
+  45004: ANSI
+  45008: UTF-8
+  45005: UTF-8-BOM
+  45006: UTF-16 BE BOM
+  45007: UTF-16 LE BOM
+  [Character sets]
+    [Arabic]
+      45034: ISO 8859-6
+      45045: OEM 720
+      45026: Windows-1256
+    [Baltic]
+      45032: ISO 8859-4
+      45040: ISO 8859-13
+      45047: OEM 775
+      45027: Windows-1257
+    [Celtic]
+      45041: ISO 8859-14
+    [Cyrillic]
+      45033: ISO 8859-5
+      45068: KOI8-R
+      45067: KOI8-U
+      45066: Macintosh
+      45050: OEM 855
+      45058: OEM 866
+      45021: Windows-1251
+    [Central European]
+      45049: OEM 852
+      45020: Windows-1250
+    [Chinese]
+      45060: Big5 (Traditional)
+      45061: GB2312 (Simplified)
+    [Eastern European]
+      45030: ISO 8859-2
+    [Greek]
+      45035: ISO 8859-7
+      45046: OEM 737
+      45059: OEM 869
+      45023: Windows-1253
+    [Hebrew]
+      45036: ISO 8859-8
+      45055: OEM 862
+      45025: Windows-1255
+    [Japanese]
+      45062: Shift-JIS
+    [Korean]
+      45063: Windows 949
+      45064: EUC-KR
+    [North European]
+      45054: OEM 861 : Icelandic
+      45057: OEM 865 : Nordic
+    [Thai]
+      45065: TIS-620
+    [Turkish]
+      45031: ISO 8859-3
+      45037: ISO 8859-9
+      45051: OEM 857
+      45024: Windows-1254
+    [Western European]
+      45029: ISO 8859-1
+      45042: ISO 8859-15
+      45048: OEM 850
+      45052: OEM 858
+      45053: OEM 860 : Portuguese
+      45056: OEM 863 : French
+      45044: OEM-US : CP437
+      45022: Windows-1252
+    [Vietnamese]
+    45028: Windows-1258
+  ----
+  45009: Convert to ANSI
+  45010: Convert to UTF-8
+  45011: Convert to UTF-8-BOM
+  45012: Convert to UTF-16 BE BOM
+  45013: Convert to UTF-16 LE BOM
+[&Language]
+  46016: None (Normal Text)
+  ----
+  46028: ActionScript
+  46042: Ada
+  46064: ASN.1
+  46009: ASP
+  46033: Assembly
+  46044: AutoIt
+  46065: AviSynth
+  46059: BaanC
+  46022: Batch
+  46066: Blitzbasic
+  46002: C
+  46023: C#
+  46003: C++
+  46040: Caml
+  46048: CMake
+  46050: COBOL
+  46069: CSound
+  46056: CoffeeScript
+  46010: CSS
+  46051: D
+  46034: Diff
+  46070: Erlang
+  46093: ErrorList
+  46094: Escape Sequence (ANSI)
+  46071: ESCRIPT
+  46072: Forth
+  46026: Fortran (free form)
+  46058: Fortran (fixed form)
+  46068: Freebasic
+  46087: GDScript
+  46089: Go
+  46052: Gui4Cli
+  46046: Haskell
+  46088: Hollywood
+  46005: HTML
+  46019: INI file
+  46047: Inno Setup
+  46061: Intel HEX
+  46004: Java
+  46007: JavaScript
+  46057: JSON
+  46085: JSON5
+  46055: JSP
+  46041: KIXtart
+  46031: LISP
+  46073: LaTeX
+  46024: Lua
+  46018: Makefile
+  46045: Matlab
+  46086: Microsoft Transact-SQL
+  46074: MMIXAL
+  46015: MS-DOS Style
+  46075: Nim
+  46076: Nncrontab
+  46029: NSIS
+  46014: Objective-C
+  46077: OScript
+  46011: Pascal
+  46013: Perl
+  46008: PHP
+  46036: PostScript
+  46053: PowerShell
+  46035: Properties
+  46067: Purebasic
+  46012: Python
+  46054: R
+  46090: Raku
+  46078: REBOL
+  46079: Registry
+  46017: Resource file
+  46037: Ruby
+  46080: Rust
+  46092: SAS
+  46027: Shell
+  46032: Scheme
+  46038: Smalltalk
+  46081: Spice
+  46020: SQL
+  46063: Swift
+  46060: S-Record
+  46030: TCL
+  46062: Tektronix extended HEX
+  46025: TeX
+  46091: TOML
+  46082: txt2tags
+  46084: TypeScript
+  46043: Verilog
+  46039: VHDL
+  46021: Visual Basic
+  46083: Visual Prolog
+  46006: XML
+  46049: YAML
+  ----
+  46250: Define your language...
+  46300: Open User Defined Language folder...
+  46301: Notepad++ User Defined Languages Collection
+  46180: User-Defined
+[&Language]
+  46016: None (Normal Text)
+  ----
+  [A]
+    46028: ActionScript
+    46042: Ada
+    46064: ASN.1
+    46009: ASP
+    46033: Assembly
+    46044: AutoIt
+    46065: AviSynth
+  [B]
+    46059: BaanC
+    46022: Batch
+    46066: Blitzbasic
+  [C]
+    46002: C
+    46023: C#
+    46003: C++
+    46040: Caml
+    46048: CMake
+    46050: COBOL
+    46069: CSound
+    46056: CoffeeScript
+    46010: CSS
+  [D]
+    46051: D
+    46034: Diff
+  [E]
+    46070: Erlang
+    46093: ErrorList
+    46094: Escape Sequence (ANSI)
+    46071: ESCRIPT
+  [F]
+    46072: Forth
+    46026: Fortran (free form)
+    46058: Fortran (fixed form)
+    46068: Freebasic
+  [G]
+    46087: GDScript
+    46089: Go
+    46052: Gui4Cli
+  [H]
+    46046: Haskell
+    46088: Hollywood
+    46005: HTML
+  [I]
+    46019: INI file
+    46047: Inno Setup
+    46061: Intel HEX
+  [J]
+    46004: Java
+    46007: JavaScript
+    46057: JSON
+    46085: JSON5
+    46055: JSP
+  46041: KIXtart
+  [L]
+    46073: LaTeX
+    46031: LISP
+    46024: Lua
+  [M]
+    46018: Makefile
+    46045: Matlab
+    46086: Microsoft Transact-SQL
+    46074: MMIXAL
+    46015: MS-DOS Style
+  [N]
+    46075: Nim
+    46076: Nncrontab
+    46029: NSIS
+  [O]
+    46014: Objective-C
+    46077: OScript
+  [P]
+    46011: Pascal
+    46013: Perl
+    46008: PHP
+    46036: PostScript
+    46053: PowerShell
+    46035: Properties
+    46067: Purebasic
+    46012: Python
+  [R]
+    46054: R
+    46090: Raku
+    46078: REBOL
+    46079: Registry
+    46017: Resource file
+    46037: Ruby
+    46080: Rust
+  [S]
+    46092: SAS
+    46027: Shell
+    46032: Scheme
+    46038: Smalltalk
+    46081: Spice
+    46020: SQL
+    46063: Swift
+    46060: S-Record
+  [T]
+    46030: TCL
+    46062: Tektronix extended HEX
+    46025: TeX
+    46091: TOML
+    46082: txt2tags
+    46084: TypeScript
+  [V]
+    46021: Visual Basic
+    46083: Visual Prolog
+    46039: VHDL
+    46043: Verilog
+  46006: XML
+  46049: YAML
+  ----
+  [User Defined Language]
+    46250: Define your language...
+    46300: Open User Defined Language folder...
+    46301: Notepad++ User Defined Languages Collection
+  46180: User-Defined
+[Se&ttings]
+  48011: Preferences...
+  46001: Style Configurator...
+  48009: Shortcut Mapper...
+  ----
+  [Import]
+    48005: Import plugin(s)...
+    48006: Import style theme(s)...
+  ----
+  48018: Edit Popup ContextMenu
+[T&ools]
+  [MD5]
+    48501: Generate...
+    48502: Generate from files...
+    48503: Generate from selection into clipboard
+  [SHA-1]
+    48507: Generate...
+    48508: Generate from files...
+    48509: Generate from selection into clipboard
+  [SHA-256]
+    48504: Generate...
+    48505: Generate from files...
+    48506: Generate from selection into clipboard
+  [SHA-512]
+  48510: Generate...
+  48511: Generate from files...
+  48512: Generate from selection into clipboard
+[&Macro]
+  42018: Start Re&cording
+  42019: S&top Recording
+  42021: &Playback
+  42025: &Save Current Recorded Macro...
+  42032: &Run a Macro Multiple Times...
+[&Run]
+  49000: &Run...
+  ----
+  49001: Validate shortcuts.xml
+[&Plugins]
+  48014: Open Plugins Folder...
+[&Window]
+  [Sort By]
+    11002: Name A to Z
+    11003: Name Z to A
+    11004: Path A to Z
+    11005: Path Z to A
+    11006: Type A to Z
+    11007: Type Z to A
+    11008: Content Length Ascending
+    11009: Content Length Descending
+    11010: Modified Time Ascending
+    11011: Modified Time Descending
+  11001: &Windows...
+  ----
+  11020: Recent Window
+[&?]
+  47010: Command Line Arguments...
+  ----
+  47001: Notepad++ Home
+  47002: Notepad++ Project Page
+  47003: Notepad++ Online User Manual
+  47004: Notepad++ Community (Forum)
+  ----
+  47006: Update Notepad++
+  47009: Set Updater Proxy...
+  ----
+  47012: Debug Info...
+  47000: About Notepad++
+41001: ＋
+[▼]
+  14001: Recent Window
+41003: ✕
+=== MENU {'kind': 'id', 'id': 1501} lang {'kind': 'id', 'id': 1033}
+[Popup]
+43101: Activate
+----
+43102: New
+43103: New and Paste
+43104: Open...
+43013: Find in Files...
+----
+43105: Close Tray Icon
+=== MENU {'kind': 'id', 'id': 1950} lang {'kind': 'id', 'id': 1033}
+[Variables menu]
+1960: &FULL_CURRENT_PATH	Full path to active file
+1961: CURRENT_&DIRECTORY	Active file's directory
+1962: FILE_&NAME	Active file's name
+1963: NAME_&PART	File name without extension
+1964: E&XT_PART	File extension (with .)
+1965: CURRENT_&WORD	Selected word or word under caret
+1966: NPP_&DIRECTORY	notepad++.exe directory
+1967: NPP_F&ULL_FILE_PATH	Full path of notepad++.exe
+1968: CURRENT_&LINE	Line number of caret
+1969: CURRENT_&COLUMN	Column number of caret
+1970: CURRENT_LINE&STR	Current line text
+DIALOG 139 'Selected Tab'
+DIALOG 1600 'Replace'
+DIALOG 1670 'Search results'
+DIALOG 1680 ''
+DIALOG 1700 ''
+DIALOG 1710 'Find in search results'
+DIALOG 1750 'Debug Info'
+DIALOG 1755 'Command Line Arguments'
+DIALOG 1760 'Save'
+DIALOG 1765 'Save'
+DIALOG 1770 'Notepad++ session loading'
+DIALOG 1900 'Run...'
+DIALOG 1920 'Generate MD5 digest from files'
+DIALOG 1930 'Generate MD5 digest'
+DIALOG 2000 'Go To...'
+DIALOG 2020 'Column / Multi-Selection Editor'
+DIALOG 2100 ''
+DIALOG 2200 'Style Configurator'
+DIALOG 2410 ''
+DIALOG 2450 ''
+DIALOG 2600 'Shortcut mapper'
+DIALOG 2700 'ASCII Codes Insertion Panel'
+DIALOG 2800 'Clipboard History'
+DIALOG 2900 'Find Characters in Range...'
+DIALOG 3000 'Document List'
+DIALOG 3100 'Project'
+DIALOG 3200 'Change file full path name'
+DIALOG 3300 'Document Map'
+DIALOG 3320 ''
+DIALOG 3321 ''
+DIALOG 3400 'Function List'
+DIALOG 3500 'File Browser'
+DIALOG 3600 ''
+DIALOG 4000 ''
+DIALOG 5000 'Shortcut'
+DIALOG 5001 'Shortcut'
+DIALOG 5500 'Plugins Admin'
+DIALOG 6000 'Preferences'
+DIALOG 6010 ''
+DIALOG 6040 ''
+DIALOG 6100 ''
+DIALOG 6150 ''
+DIALOG 6200 ''
+DIALOG 6250 ''
+DIALOG 6260 ''
+DIALOG 6270 ''
+DIALOG 6290 ''
+DIALOG 6300 ''
+DIALOG 6400 ''
+DIALOG 6450 ''
+DIALOG 6460 ''
+DIALOG 6500 ''
+DIALOG 6520 ''
+DIALOG 6550 ''
+DIALOG 6600 ''
+DIALOG 6800 ''
+DIALOG 6850 ''
+DIALOG 6900 ''
+DIALOG 7000 'Windows'
+DIALOG 7100 ''
+DIALOG 7140 ''
+DIALOG 7160 ''
+DIALOG 8000 'Run a Macro Multiple Times'
+DIALOG 20000 'User Defined Language v2.1'
+DIALOG 21000 ''
+DIALOG 22000 ''
+DIALOG 23000 ''
+DIALOG 24000 ''
+DIALOG 25000 'Styler Dialog'
+DIALOG 26000 ''
